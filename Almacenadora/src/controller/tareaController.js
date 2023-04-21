@@ -32,6 +32,26 @@ const createTask = async(req, res)=> {
     }
 }
 
+//----------------------------------------list tarea------------------------------------------
+
+const readTasK = async(req, res) => {
+    try{
+        const task = await User.find();
+        if(!task){
+            res.status(401).send({
+                msg: 'No hay tareas disponibles'
+            });
+        }else{
+            res.status(401).send({
+                task: task
+            });
+        }
+    }catch(err){
+        throw new Error(err)
+    }
+}
+
 module.exports = {
-    createTask
+    createTask,
+    readTasK
 }
