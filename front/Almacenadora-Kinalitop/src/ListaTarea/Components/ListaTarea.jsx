@@ -30,7 +30,7 @@ export const ListaTarea = () => {
                   </thead>
                   
                   <tbody>
-                      {listaTarea.map(userActual=>{
+                      {users.map(userActual=>{
                           return(
                           <tr key={userActual._id}>
                               <td>{userActual._nameUser}</td>
