@@ -22,11 +22,11 @@ const AlmacenadoraSchema =  Schema({
         required: true,
     },
     dateStart:{
-        type: Date,
+        type: String,
         required: true,
     },
     dateFinish: {
-        type: Date,
+        type: String,
         required: true,
     }
 });

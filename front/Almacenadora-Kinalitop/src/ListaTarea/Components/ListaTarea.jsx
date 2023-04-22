@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {ListTaskApi} from '../../ListaTarea/api/ListTaskApi';
 
 export const ListaTarea = () => {
-     const [users, setUsers] = useState([]);
+     const [task, setTask] = useState([]);
 
      const reload = async() => {
          const result = await ListTaskApi();
@@ -10,7 +10,7 @@ export const ListaTarea = () => {
      }
 
      useEffect(() =>{
-         reload(users);
+         reload(task);
      }, []);
 
      return (<>
@@ -30,7 +30,7 @@ export const ListaTarea = () => {
                   </thead>
                   
                   <tbody>
-                      {users.map(userActual=>{
+                      {task.map(userActual=>{
                           return(
                           <tr key={userActual._id}>
                               <td>{userActual._nameUser}</td>
